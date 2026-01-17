@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Finder Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="start-screen" class="step active">
+            <h1> Laptop Finder</h1>
+            <p>Answer 5 simple questions to find your perfect laptop.</p>
+            <button onclick="nextStep(1)">Start Tool</button>
+        </div>
+
+        <div id="step-1" class="step">
+            <h2>Step 1: Primary Use</h2>
+            <p>What will you mostly use this laptop for?</p>
+            <div class="options step-1-grid">
+                <button id="btn-gaming" onclick="selectOption('use', 'gaming', 2)">Gaming</button>
+                <button id="btn-business" onclick="selectOption('use', 'business', 2)">Business / Work</button>
+                <button id="btn-creative" onclick="selectOption('use', 'creative', 2)">Creative</button>
+                <button id="btn-student" onclick="selectOption('use', 'student', 2)">Student / General</button>
+            </div>
+        </div>
+
+        <div id="step-2" class="step">
+            <h2>Step 2: Budget Range</h2>
+            <p>What is your spending limit?</p>
+            <div class="options">
+                <button onclick="selectOption('budget', 'low', 3)">Under $600 (Budget)</button>
+                <button onclick="selectOption('budget', 'mid', 3)">$600 - $1300 (Mid-Range)</button>
+                <button onclick="selectOption('budget', 'high', 3)">$1300+ (High-End)</button>
+            </div>
+            <button class="back-btn" onclick="prevStep(1)">Back</button>
+        </div>
+
+        <div id="step-3" class="step">
+            <h2>Step 3: Portability</h2>
+            <p>How often will you carry it around?</p>
+            <div class="options">
+                <button onclick="selectOption('portability', 'high', 4)">Always (Needs to be light)</button>
+                <button onclick="selectOption('portability', 'medium', 4)">Sometimes</button>
+                <button onclick="selectOption('portability', 'low', 4)">Rarely (Desktop replacement)</button>
+            </div>
+            <button class="back-btn" onclick="prevStep(2)">Back</button>
+        </div>
+
+        <div id="step-4" class="step">
+            <h2>Step 4: OS Preference</h2>
+            <p>Do you have a preferred Operating System?</p>
+            <div class="options">
+                <button onclick="selectOption('os', 'windows', 5)">Windows</button>
+                <button onclick="selectOption('os', 'mac', 5)">MacOS</button>
+                <button onclick="selectOption('os', 'chrome', 5)">ChromeOS</button>
+                <button onclick="selectOption('os', 'any', 5)">No Preference</button>
+            </div>
+            <button class="back-btn" onclick="prevStep(3)">Back</button>
+        </div>
+
+        <div id="step-5" class="step">
+            <h2>Step 5: Priority</h2>
+            <p>What matters more to you?</p>
+            <div class="options">
+                <button onclick="selectOption('priority', 'battery', 'result')">Long Battery Life</button>
+                <button onclick="selectOption('priority', 'performance', 'result')">Raw Performance (Speed)</button>
+            </div>
+            <button class="back-btn" onclick="prevStep(4)">Back</button>
+        </div>
+
+        <div id="result-screen" class="step">
+            <h2> We Found Your Matches!</h2>
+            <p>Based on your choices, here are the options:</p>
+            
+            <div id="recommendation-content" class="bento-grid">
+                </div>
+            
+            <button class="restart-btn" onclick="restartTool()">Start Over</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

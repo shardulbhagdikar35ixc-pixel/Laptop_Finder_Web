@@ -1,0 +1,250 @@
+/* General Reset & Gradient Background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Soft gradient background */
+    background: linear-gradient(135deg, #a3cfb9 0%, #60abf5 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Main Card */
+.container {
+    background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+}
+
+/* Steps */
+.step {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+.step.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 { font-size: 2.5rem; color: #222; margin-bottom: 0.5rem; }
+h2 { font-size: 1.8rem; color: #333; margin-bottom: 1rem; }
+p { color: #555; font-size: 1.1rem; margin-bottom: 2rem; }
+
+/* --- STEP 1 SPECIFIC STYLES --- */
+/* Force all buttons to be on the "same level" (1 row) on desktop */
+.step-1-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Equal columns */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Custom Colors for Step 1 Categories */
+#btn-gaming { background-color: #ff6b6b; }
+#btn-gaming:hover { background-color: #ee5253; }
+
+#btn-business { background-color: #48dbfb; color: #000; }
+#btn-business:hover { background-color: #0abde3; }
+
+#btn-creative { background-color: #a29bfe; }
+#btn-creative:hover { background-color: #6c5ce7; }
+
+#btn-student { background-color: #1dd1a1; }
+#btn-student:hover { background-color: #10ac84; }
+
+
+/* Standard Grid for other steps */
+.options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Standard Button Styles */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.back-btn {
+    background-color: transparent;
+    color: #777;
+    margin-top: 10px;
+    box-shadow: none;
+    font-weight: normal;
+}
+.back-btn:hover {
+    background-color: #f1f1f1;
+    color: #333;
+    transform: none;
+}
+
+.restart-btn {
+    margin-top: 30px;
+    background-color: #333;
+}
+
+/* --- BENTO GRID RESULT --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.bento-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; This was conflicting with flexible content */ 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.bento-box.primary { border-top: 5px solid #007bff; }
+.bento-box.secondary { border-top: 5px solid #feca57; }
+
+.bento-box h3 { margin-top: 10px; font-size: 1.5rem; color: #222; }
+.bento-box h4 { font-size: 0.85rem; text-transform: uppercase; color: #888; letter-spacing: 1px; }
+
+/* Learn More Section Styles */
+.learn-more-btn {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #555;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    width: 100%;
+}
+.learn-more-btn:hover {
+    background-color: #f8f9fa;
+    transform: none;
+}
+
+.details-content {
+    display: none; /* Hidden by default */
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.specs-table {
+    width: 100%;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+}
+
+.specs-table td {
+    padding: 4px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.specs-table td:first-child {
+    font-weight: bold;
+    color: #666;
+    width: 40%;
+}
+
+.fact-box {
+    background-color: #f1f8ff;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #0056b3;
+    margin-top: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .step-1-grid { grid-template-columns: 1fr 1fr; } /* 2x2 on mobile */
+    .bento-grid { grid-template-columns: 1fr; }
+}
+
+.desc-text {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1rem;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.buy-btn {
+    display: inline-block;
+    background-color: #ff9900; /* Amazon Orange */
+    color: white; /* Dark text for contrast */
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s;
+    border: 1px solid #cc7a00;
+}
+
+.buy-btn:hover {
+    background-color: #e68a00;
+}
+
+/* Adjust Learn More to fit nicely */
+.learn-more-btn {
+    margin-top: 0; /* Remove top margin since flex gap handles it */
+}
+/* Image Container */
+.img-container {
+    width: 100%;
+    height: 180px; /* Fixed height ensures boxes stay aligned */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    background: white; /* Optional: adds a clean background behind image */
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* The Image Itself */
+.laptop-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* This prevents the image from looking squashed */
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Slight zoom on hover */
+.bento-box:hover .laptop-img {
+    transform: scale(1.05);
+}
